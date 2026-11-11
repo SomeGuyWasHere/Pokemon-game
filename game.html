@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="game.js" defer></script>
+    <title>Game</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Pokémon Delta Emerald
+        </h1>
+
+        <nav>
+            <a href="index.html" aria-current="page">Home</a>
+            <a class="active" href="#" aria-current="page">Game</a>
+            <a href="pokedex.html" aria-current="page">Pokédex</a>
+        </nav>
+    </header>
+    <main>
+        <section class="gameherosection">
+            <div class="game-introduction">
+                <h2 class="redtext">
+                    Game
+                </h2>
+
+                <p class="maintext">
+                    Pokémon Delta Emerald
+                </p>
+
+                <p class="undertext">
+                    Choose the name for your trainer, choose your starter, explore the region, battle,
+                    and see the pokémon you've caught.
+                </p>
+            </div>
+        </section>
+        <section>
+            <div class="trainer-setup-div">
+                <form id="game-start-form" class="game-start-form">
+                    <h2 id="trainer-setup-heading" class="trainer-setup-heading">
+                        Set up your trainer
+                    </h2>
+
+                    <label for="trainer-setup-heading">
+                        Use a fictional trainer name and choose one starter
+                    </label>
+                    <div class="trainer-input-div">
+                        <label id="trainer-name" class="trainer-name" for="trainer-name-input">
+                            Trainer name
+                        </label>
+
+                        <p id="trainer-name-help" class="trainer-name-help">
+                            Enter a fictional name.
+                        </p>
+
+                        <input
+                            id="trainer-name-input"
+                            class="trainer-name-input"
+                            name="trainerName"
+                            type="text"
+                            aria-describedby="trainer-name-error"
+                        >
+                        <p id="trainer-name-error" class="text-error" role="status"></p>
+                    </div>
+
+                    <div>
+                        <label id="starter-choice" class="starter-choice" for="starter-choice-option">
+                            Starter Pokémon
+                        </label>
+
+                        <p id="starter-help" class="starter-help">
+                            Choose one starter for this game.
+                        </p>
+
+                        <select id="starter-choice-option" class="starter-choice-option" name="starterChoice" aria-describedby="starter-error">
+                            <option value="">Choose a starter</option>
+                            <option value="treecko">Treecko</option>
+                            <option value="torchic">Torchic</option>
+                            <option value="mudkip">Mudkip</option>
+                        </select>
+
+                        <p id="starter-error" class="text-error" role="status"></p>
+                    </div>
+
+                    <button class="start" type="submit">Start game</button>
+                </form>
+            </div>
+        </section>
+        
+        <section id="exploration" class="overworld">
+            <h2 id="overworld-heading" class="overworld-heading">
+                Overworld Map
+            </h2>
+
+            <p id="overworld-map-help" class="overworld-map-help">
+                Read the map from the top left to the bottom right.
+                Each tile uses a letter and color to identify its terrain.
+            </p>
+
+            <ul class="map-legend">
+                <li>
+                    <span class="map-key map-key--center">C</span> Pokémon Center
+                </li>
+                <li>
+                    <span class="map-key map-key--path">P</span> Path
+                </li>
+                <li>
+                    <span class="map-key map-key--grass">G</span> Tall Grass
+                </li>
+                <li>
+                    <span class="map-key map-key--blocked">X</span> Blocked terrain
+                </li>
+            </ul>
+
+            <ol id="overworld-map" class="overworld-map"></ol>
+
+            <div class="movement-div">
+                <h2 class="movement-heading">
+                    Move one step
+                </h2>
+
+                <p id="movement-help" class="movement-help">
+                    Please make a trainer before choosing a direction
+                </p>
+                <div class="movement-buttons">
+                    <button
+                        id="movement-north-button"
+                        class="movement-button movement-north-button"
+                        type="button"
+                        disabled
+                        >
+                        North
+                    </button>
+                    
+                    <button
+                        id="movement-south-button"
+                        class="movement-button movement-south-button"
+                        type="button"
+                        disabled
+                    >
+                        South
+                    </button>
+
+                    <button 
+                        id="movement-west-button" 
+                        class="movement-button movement-west-button" 
+                        type="button" 
+                        disabled
+                    >
+                        West
+                    </button>
+
+                    <button
+                        id="movement-east-button"
+                        class="movement-button movement-east-button"
+                        type="button"
+                        disabled
+                    >
+                    East
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="encounter-section" class="encounter-section" hidden>
+            <div class="encounterinfo">
+                <h2 id="wild-heading" class="wild-heading" tabindex="-1">
+                    A wild Pokémon Appears
+                </h2>
+
+                <div class="encounter-details">
+                    <div class="encounter-important-info">
+                        <span id="encounter-name" class="encounter-name">
+                            Wild Pokémon
+                        </span>
+
+                        <span id="encounter-type" class="encounter-type">
+                            Type: <span id="output-encounter-type">Not available.</span>
+                        </span>
+
+                        <span id="output-encounter-hp" class="output-encounter-hp">
+                            Not available.
+                        </span>
+
+                        <div id="encounter-hp-bar" class="encounter-hp-bar">
+                            <div id="encounter-hp-fill" class="hp-bar-fill"></div>
+                        </div>
+                    </div>
+                    <div class="encounter-img-platform">
+                        <div class="encounter-image-container">
+                            <img
+                            id="encounter-image"
+                            class="encounter-image"
+                            src="assets/Ralts.png" 
+                            alt="">
+                            <img class="enemy-platform" src="assets/battle-platform-enemy.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="encounter-starter">
+                    <div class="starter-platform-container">
+                        <img id="starter-image" class="starter-image" src="assets/Treecko-back.png" alt="">
+                        <img class="player-platform" src="assets/battle-platform-player.png" alt="">
+                    </div>
+                    <div class="starter-important-info">
+                        <span id="encounter-starter-name">
+                            Not available.
+                        </span>
+                        
+                        <div id="starter-hp-bar" class="starter-hp-bar">
+                            <div id="starter-hp-fill" class="hp-bar-fill"></div>
+                        </div>
+
+                        <span id="encounter-starter-hp" class="encounter-starter-hp">
+                            Not available.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="action-container">
+                    <p class="battle-instruction">
+                        Choose an action for this Pokémon.
+                    </p>
+
+                    <div class="battle-controls" class="battle-actions" role="group" aria-label="Battle actions">
+                        <button id="battle-attack" class="battle-action" type="button" disabled>
+                            Attack
+                        </button>
+
+                        <button id="battle-catch" class="battle-action" type="button" disabled>
+                            Throw PokéBall
+                        </button>
+
+                        <button id="battle-run" class="battle-action" type="button" disabled>
+                            Run
+                        </button>
+                    </div>
+                </div>
+
+                <p class="encounter-return">
+                    <a href="#trainer-name-input">Return to trainer setup</a>
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="game-summary">
+                <h2 id="game-summary-heading" class="game-summary-heading">
+                    Current game
+                </h2>
+
+                <label for="output-list">
+                    <ul id="output-list">
+                        <li>
+                            <p id="trainer-output" role="status">
+                                Trainer: <span class="output" id="output-trainer">No trainer yet.</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p id="starter-output" role="status">
+                                Starter: <span class="output" id="output-starter">No starter selected.</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p id="hit-points-output" role="status">
+                                Hit points: <span class="output" id="output-hp">Not available.</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p id="position-output" role="status">
+                                Position: <span class="output" id="output-position">Not set.</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p id="encounter-output" role="status">
+                                Encounter: <span class="output" id="output-encounter">No active encounter.</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p id="caught-output" role="status">
+                                Caught Pokémon: <span class="output" id="output-caught">0</span>
+                            </p>
+                        </li>
+                        <li class="status-game">
+                            <p id="game-status" role="status">
+                                Enter a fictional trainer name choose a starter.
+                            </p>
+                        </li>
+                    </ul>
+                </label>
+            </div>
+        </section>
+
+        <section id="caught-pokemon" class="caught-pokemon">
+            <h2 id="caught-heading" class="caught-heading" >Caught Pokémon</h2>
+            <ul id="caught-list" class="caught-list">
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p class="footertext">
+            Pokémon Delta Emerald &middot; Browser Based game
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1032 @@
+/* *{
+    border: 1px solid red;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root{
+    --color-map-path: #fbe8de;
+    --color-map-grass: lightgreen;
+    --color-map-blocked: cyan;
+    --color-highlight: #f3cf3f;
+    --color-surface: #4B5876;
+    --spacing-small: 0.75rem;
+    --spacing-medium: 1rem;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: "Press Start 2P", system-ui;
+    max-height: 100vh;
+    background-color: lightcyan;
+}
+
+/*#region Header navigation*/
+header{
+    display: flex;
+    background-color: darkblue;
+    border-bottom: 10px solid #50C878;
+    border-radius: 10px;
+    padding-bottom: 30px;
+    padding-top: 40px;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+    margin-top: -30px;
+    width: 100%;
+    max-width: 1600px;
+    min-width: 850px;
+}
+
+header h1{
+    font-size: 20px;
+    color: #50C878;
+    text-decoration: underline;
+    margin-left: 20px;
+}
+
+nav{
+    display: flex;
+    padding: 10px 20px;
+    gap: 15px;
+}
+
+nav a{
+    color: white;
+    font-size: 15px;
+}
+
+nav a.active{
+    text-align: center;
+    width: 110px;
+    border: 2px solid #50C878;
+    border-radius: 5px;
+    background-color: #50C878;
+    color: darkblue;
+}
+/*#endregion*/
+
+/*#region Home Page */
+.gameherosection{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.pokedexherosection{
+    margin-bottom: 200px;
+}
+
+.pokedextopsection{
+    background-color: white;
+    border: 2px solid blue;
+    border-top: 7px solid red;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 1100px;
+    padding-bottom: 10px;
+    justify-self: center;
+}
+.pokemoninregion{
+    margin-top: 30px;
+    margin-bottom: -150px;
+    color: darkblue;
+    text-align: center;
+}
+
+.topsection{
+    background-color: white;
+    border: 2px solid blue;
+    border-top: 7px solid red;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 1100px;
+    justify-self: center;
+}
+
+.redtext{
+    max-width: 50rem;
+    color: red;
+    font-weight: 100;
+    font-size: 13px;
+    margin-left: 20px;
+    margin-top: 19px;
+}
+
+.maintext{
+    max-width: 60rem;
+    font-size: 35px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.undertext{
+    max-width: 70rem;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: darkblue;
+}
+
+.buttondiv{
+    display: flex;
+    gap: 10px;
+    height: 45px;
+    width: 450px;
+    margin-left: 10px;
+}
+
+.startbutton{
+    background-color: red;
+    border: 2px solid blue;
+    border-radius: 3px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.startbutton, .pokedexbutton{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pokedexbutton{
+    background-color: #50C878;
+    border: 2px solid blue;
+    border-radius: 3px;
+    color: blue;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.boldtext{
+    font-weight: bold;
+}
+
+.adventureparts{
+    color: darkblue;
+}
+
+.adventurepartshead{
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.adventurepartssub{
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.boxdiv{
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    justify-self: center;
+    gap: 10px;
+    margin-bottom: 100px;
+    background-color: white;
+}
+
+.leftbox{
+    border: 4px solid blue;
+    border-top: 10px solid #50C878;
+    border-radius: 10px;
+    width: 700px;
+    padding-bottom: 30px;
+}
+
+.leftmidbox{
+    border: 4px solid blue;
+    border-top: 10px solid #50C878;
+    border-radius: 10px;
+    width: 700px;
+}
+
+.rightmidbox{
+    border: 4px solid blue;
+    border-top: 10px solid #50C878;
+    border-radius: 10px;
+    width: 700px;
+}
+
+.rightbox{
+    border: 4px solid blue;
+    border-top: 10px solid #50C878;
+    border-radius: 10px;
+    width: 700px;
+}
+
+.boxmaintext{
+    font-size: 20px;
+    color: darkblue;
+    text-align: center;
+}
+
+.boxsubtext{
+    font-size: 13px;
+    color: darkblue;
+    margin-left: 20px;
+}
+/*#endregion*/
+
+/*#region pokedex page*/
+.pokedex-filter{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin-top: -110px;
+    margin-bottom: 190px;
+    background-color: white;
+    border: 4px solid darkblue;
+    border-top: 10px solid #50C878;
+    border-radius: 10px;
+    width: 1000px;
+    padding-top: 20px;
+    height: 150px;
+}
+
+.pokedex-filter label{
+    margin-left: 10px;
+}
+
+.pokedex-filter select{
+    margin-top: 20px;
+    width: 200px;
+    padding: 10px 10px;
+    border: 5px solid darkblue;
+}
+
+.filter-status{
+    margin-left: 10px;
+    color: gray;
+    font-size: 15px;
+    flex-wrap: wrap;
+}
+
+.type-filter{
+    border: 2px solid darkblue;
+    width: 100px;
+}
+
+.pokemondiv{
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    justify-self: center;
+    gap: 10px;
+    margin-top: -150px;
+    margin-bottom: 10px;
+}
+
+.pokemonbox{
+    background-color: white;
+    width: 370px;
+    border: 4px solid blue;
+    border-top: 10px solid #50C878;
+    border-radius: 10px;
+}
+
+.pokedexnumber{
+    color: gray;
+    font-size: 15px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.name{
+    color: darkblue;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.pokemonpicture{
+    height: 230px;
+    margin-left: 70px;
+}
+
+.type{
+    margin-left: 10px;
+}
+
+.bluetext{
+    color: darkblue;
+}
+
+.role{
+    margin-left: 10px;
+}
+
+.information{
+    color: darkblue;
+    font-size: 13px;
+    margin-left: 10px;
+}
+/*#endregion*/
+
+/*#region Game Setup*/
+.game-introduction{
+    background-color: white;
+    border: 2px solid blue;
+    border-top: 7px solid red;
+    border-radius: 10px;
+    margin-top: -13px;
+    width: 1100px;
+    margin-bottom: -20px;
+    justify-self: center;
+}
+
+.trainer-setup-div{
+    border: 2px solid blue;
+    border-radius: 10px;
+    background-color: white;
+    width: 1100px;
+    justify-self: center;
+}
+
+.game-start-form{
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+.trainer-setup-heading{
+    color: darkblue;
+    font-size: 25px;
+}
+
+.trainer-form label{
+    color: gray;
+    font-size: 13px;
+}
+
+.trainer-input-div{
+    margin-top: 30px;
+}
+
+.trainer-name{
+    color: black;
+    font-size: 20px;
+}
+
+#trainer-name-help{
+    color: gray;
+    font-size: 13px;
+}
+
+.trainer-name-input{
+    border: 2px solid darkblue;
+    border-radius: 3px;
+    padding: 10px 170px 10px 10px;
+}
+
+.starter-choice{
+    color: black;
+    font-size: 20px;
+}
+
+.starter-help{
+    color: gray;
+    font-size: 13px;
+}
+
+.text-error{
+    color: red;
+}
+
+.starter-choice-option{
+    border: 2px solid darkblue;
+    border-radius: 3px;
+    padding: 10px 220px 10px 10px;
+}
+
+.start{
+    padding: 10px 140px 10px 140px;
+    margin-bottom: 20px;
+    border: 2px solid blue;
+    border-radius: 3px;
+    background-color: #50C878;
+    color: white;
+}
+/*#endregion*/
+
+/*#region overworld-map */
+.overworld{
+    background-color: white;
+    border: 2px solid blue;
+    border-radius: 10px;
+    width: 1100px;
+    justify-self: center;
+    margin-top: 10px;
+}
+
+.overworld-heading{
+    margin-left: 10px;
+}
+
+.overworld-map-help{
+    font-size: 13px;
+    margin-left: 10px;
+    color: gray;
+}
+
+.map-legend{
+    display: flex;
+    flex-direction: column;
+}
+
+.map-legend li{
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    gap: 10px;
+}
+
+.trainer-sprite{
+    display: block;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+}
+
+.trainer-sprite--north{
+    animation: trainer-step-north 160ms ease-out;
+}
+
+.trainer-sprite--south{
+    animation: trainer-step-south 160ms ease-out;
+}
+
+.trainer-sprite--west{
+    animation: trainer-step-west 160ms ease-out;
+}
+
+.trainer-sprite--east{
+    animation: trainer-step-east 160ms ease-out;
+}
+
+.map-key{
+    border: 1px solid blue;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.map-key--center, .map-tile--center{
+    background-color: var(--color-highlight);
+}
+
+.map-key--path, .map-tile--path{
+    background-color: var(--color-map-path);
+}
+
+.map-key--grass, .map-tile--grass{
+    background-color: var(--color-map-grass);
+}
+
+.map-key--blocked, .map-tile--blocked{
+    background-color: var(--color-surface);
+    color: white;
+}
+
+.overworld-map{
+    display: grid;
+    grid-template: 50px 50px 50px 50px 50px / 50px 50px 50px 50px 50px;
+    list-style: none;
+}
+
+.overworld-map li{
+    border: 1px solid blue;
+}
+/*#endregion */
+
+/*#region movement-keys*/
+.movement-div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-small);
+    align-items: center;
+    margin-top: var(--spacing-medium);
+}
+
+.movement-heading{
+    flex-basis: 100%;
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+.movement-help{
+    flex-basis: 100%;
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+.movement-buttons{
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.movement-button{
+    font-size: 17px;
+    padding: 15px 40px;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    background-color: #50C878;
+    color: black;
+    cursor: pointer;
+}
+
+.movement-button:focus-visible{
+    outline: 3px solid yellow;
+    outline-offset: 3px;
+}
+
+.movement-button:disabled{
+    background-color: darkgray;
+    color: lightgray;
+    border-color: gray;
+    cursor: not-allowed;
+    opacity: 1;
+}
+/*#endregion*/
+
+/*#region Battle Screen*/
+.encounter-section{
+    justify-self: center;
+    border: 2px solid blue;
+    width: 1100px;
+    background-image: url('assets/battle-background.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.encounter-details{
+    display: flex;
+    justify-content: space-around;
+}
+
+.encounterinfo{
+    margin-left: 10px;
+}
+
+.encounter-important-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 12px;
+    height: 120px;
+    width: 280px;
+}
+
+.encounter-hp-bar,
+.starter-hp-bar{
+    background-color: lightgray;
+    width: 110px;
+    height: 12px;
+    overflow: hidden;
+    align-self: flex-end;
+}
+
+.hp-bar-fill {
+    background-color: lightgreen;
+    height: 100%;
+    width: 100%;
+    transition: width 0.7s ease;
+}
+
+.encounter-section .encounter-image.fainting,
+.starter-image.fainting {
+    animation: faint-down 0.6s ease-in forwards;
+}
+
+.encounter-section.battle-entering .encounter-image{
+    animation: wild-brightness 1.2s ease-out both;
+}
+
+.encounter-name{
+    margin-left: 3px;
+}
+
+.output-encounter-hp{
+    align-self: flex-end;
+    margin-bottom: -25px;
+}
+
+.encounter-image{
+    height: 160px;
+    position: relative;
+    margin-bottom: -80px;
+    z-index: 999;
+}
+
+.encounter-image.encounter-attacking {
+    animation: wild-attack 0.4s ease-in-out;
+}
+
+.encounter-type{
+    margin-top: -10px;
+    font-size: 13px;
+}
+
+.encounter-starter-hp{
+    align-self: flex-end;
+    margin-top: -25px;
+}
+
+.encounter-starter{
+    display: flex;
+    justify-content: space-around;
+}
+
+.encounter-img-platform{
+    display: flex;
+    margin-left: -100px;
+}
+
+.encounter-image-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.enemy-platform{
+    width: 300px;
+    z-index: 899;
+}
+
+/* Wild Pokémon and its platform slide in from the left. */
+.encounter-section.battle-entering .encounter-image-container{
+    animation: wild-slide-in 0.7s ease-out both;
+}
+
+/* Starter Pokémon and its platform slide in from the right. */
+.encounter-section.battle-entering .starter-platform-container {
+    animation: starter-slide-in 0.7s ease-out both;
+}
+
+/* Battle information and controlls appear after the Pokémon. */
+.encounter-section.battle-entering #wild-heading,
+.encounter-section.battle-entering .encounter-important-info,
+.encounter-section.battle-entering .starter-important-info,
+.encounter-section.battle-entering .action-container,
+.encounter-section.battle-entering .encounter-return {
+    animation: battle-ui-appear 0.4s ease-out 0.75s both;
+}
+
+.player-platform{
+    width: 400px;
+    position: relative;
+}
+
+.starter-platform-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.starter-important-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 12px;
+    margin-top: 20px;
+    width: 250px;
+    height: 100px;
+}
+
+.starter-image{
+    height: 170px;
+    margin-bottom: -75px;
+    z-index: 800;
+}
+
+.starter-image.starter-attacking {
+    animation: starter-attack 0.4s ease-in-out;
+}
+
+.action-container{
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 12px;
+    padding: 6px;
+    position: relative;
+    z-index: 999;
+}
+
+.battle-action{
+    font-size: 17px;
+    padding: 15px 40px;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    background-color: #50C878;
+    color: black;
+    cursor: pointer;
+}
+
+.battle-action:focus-visible{
+    outline: 3px solid green;
+    outline-offset: 3px;
+}
+
+.battle-action:disabled{
+    background-color: darkgray;
+    color: lightgray;
+    border-color: gray;
+    cursor: not-allowed;
+    opacity: 1;
+}
+/*#endregion*/
+
+/*#region game-summary*/
+.game-summary{
+    background-color: white;
+    border: 2px solid blue;
+    border-radius: 10px;
+    width: 1100px;
+    justify-self: center;
+    margin-top: 10px;
+}
+
+.game-summary-heading{
+    color: darkblue;
+    margin-left: 10px;
+}
+
+.output-list{
+    font-size: 13px;
+}
+
+.status-game{
+    background-color: lightcyan;
+    border-left: 3px solid #50C878;
+    padding: 8px 8px 8px 15px;
+    list-style-type: none;
+}
+
+.caught-pokemon{
+    margin-top: 10px;
+    justify-self: center;
+    width: 1100px;
+    background-color: white;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.caught-heading{
+    margin-left: 10px;
+    color: darkblue;
+}
+
+.caught-list{
+    list-style-type: none;
+}
+
+.gamestatusdiv{
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: -10px;
+    max-width: 795px;
+    border-left: 5px solid red;
+}
+
+.gamestatus{
+    font-size: 15px;
+    margin-left: 15px;
+    color: darkblue;
+}
+/*#endregion*/
+
+/*#region footer*/
+footer{
+    display: flex;
+    align-self: center;
+    border-top: 2px solid #00674F;
+    width: 100%;
+    max-width: 1600px;
+    min-width: 850px;
+}
+
+.footertext{
+    color: #00674F;
+    font-size: 13px;
+}
+/*#endregion*/
+
+/*#region Animation*/
+@keyframes trainer-step-north {
+    from { 
+        transform: translateY(50px); 
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes trainer-step-south {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes trainer-step-west {
+    from {
+        transform: translateX(50px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes trainer-step-east {
+    from {
+        transform: translateX(-50px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes wild-brightness {
+    0%, 50% {
+        filter: brightness(45%);
+    }
+    100% {
+        filter: brightness(100%);
+    }
+}
+
+@keyframes wild-slide-in {
+    from {
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes starter-slide-in {
+    from {
+        transform: translateX(500px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes battle-ui-appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes starter-attack {
+    50% {
+        transform: translate(35px, -12px);
+    }
+}
+
+@keyframes wild-attack {
+    50% {
+        transform: translate(-35px, 12px);
+    }
+}
+
+@keyframes faint-down {
+    to {
+        transform: translateY(70px);
+        opacity: 0;
+        z-index: 800;
+    }
+}
+/*#endregion*/
+
+/*#region Responsive*/
+@media screen and (prefers-reduced-motion: no-preference) {
+    .startbutton:hover, .startbutton:focus{
+        transform: translateY(-10px);
+        transition: 200ms;
+    }
+}
+@media screen and (max-width: 1431px) {
+    .boxdiv{
+        grid-template: 1fr / 1fr;
+    }
+}
+
+@media screen and (max-width: 1263px) {
+    header, footer{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1143px) {
+    .game-introduction, .pokedextopsection, .topsection, .trainer-setup-div, 
+    .game-summary, .overworld, .caught-pokemon, .encounter-section{
+        width: 100%;
+        min-width: 100%;
+        flex-wrap: wrap;
+    }
+    .pokemondiv{
+        grid-template: 1fr 1fr / 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1001px) {
+    header, .gameherosection, .pokedexherosection, 
+    footer, .buttondiv, .pokedex-filter, .trainer-setup-div, 
+    .game-summary, .overworld {
+        width: 100%;
+        min-width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 853px) {
+    header, .gameherosection, .pokedexherosection,
+    .game-introduction, .pokedextopsection, .topsection, footer,
+    .trainer-setup-div, .game-summary, .overworld{
+        width: 100%;
+        min-width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pokemondiv{
+        grid-template: 1fr / 1fr;
+    }
+}
+
+@media screen and (max-width: 711px){
+    .boxdiv, .box{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .battle-action, .movement-buttons{
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 571px) {
+    .boxdiv, header, .gameherosection, .pokedexherosection,
+    .game-introduction, .pokedextopsection, .topsection, footer{
+        width: 100%;
+        min-width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 511px) {
+    .boxdiv, .gameherosection, .pokedexherosection,
+    .game-introduction, .pokedextopsection, .topsection, footer{
+        width: 100%;
+        min-width: 100%;
+        flex-wrap: wrap;
+    }
+    .start, .trainer-name-input{
+        padding: 10px 120px 10px 120px;
+    }
+    .trainer-name-input, .starter-choice-option{
+        padding: 10px 170px 10px 10px;
+    }
+}
+
+@media screen and (min-width: 490px){
+    .buttondiv {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .pokemondiv {
+        width: 100%;
+    }
+}
+/*#endregion*/

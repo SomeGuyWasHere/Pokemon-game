@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="pokedex.js" defer></script>
+    <title>PokeDex</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Pokémon Delta Emerald
+        </h1>
+        
+        <nav>
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="game.html" aria-current="page">Game</a>
+            <a class="active" href="#" aria-current="page">Pokédex</a>
+        </nav>
+    </header>
+    <main>
+        <section class="pokedexherosection">
+            <div class="pokedextopsection">
+                <h2 class="redtext">
+                    Pokédex entries
+                </h2>
+
+                <p class="maintext">
+                    Pokédex
+                </p>
+
+                <p class="undertext">
+                    This page shows you what pokémon that are in this region
+                </p>
+                <div class="buttondiv">
+                    <a class="startbutton" href="index.html">Back to home</a>
+                    <a class="pokedexbutton" href="game.html">Start the game</a>
+                </div>
+            </div>
+
+            <p class="pokemoninregion">Pokemons in this region</p>
+        </section>
+
+        <section>
+            <div id="pokedex-filter" class="pokedex-filter" hidden>
+                <label for="type-filter">Filter by type</label>
+                <select id="type-filter" class="type-filter" name="typeFilter">
+                    <option value="all">All types</option>
+                    <option value="grass">Grass</option>
+                    <option value="fire">Fire</option>
+                    <option value="water">Water</option>
+                    <option value="dark">Dark</option>
+                    <option value="psychic">Psychic</option>
+                    <option value="fairy">Fairy</option>
+                    <option value="normal">Normal</option>
+                    <option value="steel">Steel</option>
+                    <option value="rock">Rock</option>
+                    <option value="ground">Ground</option>
+                </select>
+                <p id="filter-status" class="filter-status" role="status">Showing all 8 Pokémon.</p>
+            </div>
+            <div class="pokemondiv">
+                <div class="pokemonbox" data-types="grass">
+                    <h2 class="pokedexnumber">
+                        #0252
+                    </h2>
+                    
+                    <h3 class="name">
+                        Treecko
+                    </h3>
+
+                    <img src="assets/Treecko.png" alt="A picture of Treecko" class="pokemonpicture">
+
+                    <p class="type">
+                        <span class="boldtext">Type:</span> <span class="bluetext">Grass</span>
+                    </p>
+
+                    <p class="role">
+                        <span class="boldtext"> Planned role:</span> <span class="bluetext">Starter option</span>
+                    </p>
+
+                    <p class="information">
+                        It makes its nest in a giant tree in the forest. It ferociously guards against anything nearing its territory. It is said to be the protector of the forest's trees. 
+                    </p>
+                </div>
+
+                <div class="pokemonbox" data-types="fire">
+                    <h2 class="pokedexnumber">
+                        #0255
+                    </h2>
+                    
+                    <h3 class="name">
+                        Torchic
+                    </h3>
+
+                    <img src="assets/Torchic.png" alt="A picture of Torchic" class="pokemonpicture">
+
+                    <p class="type">
+                        <span class="boldtext">Type:</span> <span class="bluetext">Fire</span>
+                    </p>
+
+                    <p class="role">
+                        <span class="boldtext"> Planned role:</span> <span class="bluetext">Starter option</span>
+                    </p>
+
+                    <p class="information">
+                        If attacked, it strikes back by spitting balls of fire it forms in its stomach. A TORCHIC dislikes darkness because it can't see its surroundings.. 
+                    </p>
+                </div>
+
+                <div class="pokemonbox" data-types="water">
+                    <h2 class="pokedexnumber">
+                        #0258
+                    </h2>
+                    
+                    <h3 class="name">
+                        Mudkip
+                    </h3>
+
+                    <img src="assets/Mudkip.png" alt="A picture of Mudkip" class="pokemonpicture">
+
+                    <p class="type">
+                        <span class="boldtext">Type:</span> <span class="bluetext">Water</span>
+                    </p>
+
+                    <p class="role">
+                        <span class="boldtext"> Planned role:</span> <span class="bluetext">Starter option</span>
+                    </p>
+
+                    <p class="information">
+                        On land, it can powerfully lift large boulders by planting its four feet and heaving. It sleeps by burying itself in soil at the water's edge.
+                    </p>
+            </div>
+
+            <div class="pokemonbox" data-types="dark">
+                    <h2 class="pokedexnumber">
+                        #0261
+                    </h2>
+                    
+                    <h3 class="name">
+                        Poochyena
+                    </h3>
+
+                    <img src="assets/Poochyena-Pokedex.png" alt="A picture of Poochyena" class="pokemonpicture">
+
+                    <p class="type">
+                        <span class="boldtext">Type:</span> <span class="bluetext">Dark</span>
+                    </p>
+
+                    <p class="role">
+                        <span class="boldtext"> Planned role:</span> <span class="bluetext">Wild Encounter</span>
+                    </p>
+
+                    <p class="information">
+                        It savagely threatens foes with bared fangs. It chases after fleeing targets tenaciously. It turns tail and runs, however, if the foe strikes back.
+                    </p>
+            </div>
+
+            <div class="pokemonbox" data-types="psychic fairy">
+                    <h2 class="pokedexnumber">
+                        #0280
+                    </h2>
+                    
+                    <h3 class="name">
+                        Ralts
+                    </h3>
+
+                    <img src="assets/Ralts-Pokedex.png" alt="A picture of Ralts" class="pokemonpicture">
+
+                    <p class="type">
+                        <span class="boldtext">Type:</span> <span class="bluetext">Psychic and Fairy</span>
+                    </p>
+
+                    <p class="role">
+                        <span class="boldtext"> Planned role:</span> <span class="bluetext">Wild Encounter</span>
+                    </p>
+
+                    <p class="information">
+                        A RALTS has the power to sense the emotions of people and POKéMON with the horns on its head. It takes cover if it senses any hostility.
+                    </p>
+            </div>
+
+            <div class="pokemonbox" data-types="normal">
+                    <h2 class="pokedexnumber">
+                        #0287
+                    </h2>
+                    
+                    <h3 class="name">
+                        Slakoth
+                    </h3>
+
+                    <img src="assets/Slakoth-Pokedex.png" alt="A picture of Slakoth" class="pokemonpicture">
+
+                    <p class="type">
+                        <span class="boldtext">Type:</span> <span class="bluetext">Normal</span>
+                    </p>
+
+                    <p class="role">
+                        <span class="boldtext"> Planned role:</span> <span class="bluetext">Wild Encounter</span>
+                    </p>
+
+                    <p class="information">
+                        It sleeps virtually all day and night long. It doesn't change its nest its entire life, but it sometimes travels great distances by swimming in rivers.
+                    </p>
+            </div>
+
+            <div class="pokemonbox" data-types="steel rock">
+                    <h2 class="pokedexnumber">
+                        #0304
+                    </h2>
+                    
+                    <h3 class="name">
+                        Aron
+                    </h3>
+
+                    <img src="assets/Aron-Pokedex.png" alt="A picture of Aron" class="pokemonpicture">
+
+                    <p class="type">
+                        <span class="boldtext">Type:</span> <span class="bluetext">Steel and Rock</span>
+                    </p>
+
+                    <p class="role">
+                        <span class="boldtext"> Planned role:</span> <span class="bluetext">Wild Encounter</span>
+                    </p>
+
+                    <p class="information">
+                        A POKéMON that is clad in steel armor. A new suit of armor is made when it evolves. The old, discarded armor is salvaged as metal for making iron products.
+                    </p>
+            </div>
+
+            <div class="pokemonbox" data-types="ground">
+                    <h2 class="pokedexnumber">
+                        #0328
+                    </h2>
+                    
+                    <h3 class="name">
+                        Trapinch
+                    </h3>
+
+                    <img src="assets/Trapinch-Pokedex.png" alt="A picture of Trapinch" class="pokemonpicture">
+
+                    <p class="type">
+                        <span class="boldtext">Type:</span> <span class="bluetext">Ground</span>
+                    </p>
+
+                    <p class="role">
+                        <span class="boldtext"> Planned role:</span> <span class="bluetext">Wild Encounter</span>
+                    </p>
+
+                    <p class="information">
+                        Its big jaws crunch through boulders. Because its head is so big, it has a hard time getting back upright if it tips over onto its back.
+                    </p>
+            </div>
+            <div class="pokemonbox" data-types="steel psychic">
+                    <h2 class="pokedexnumber">
+                        #0374
+                    </h2>
+                    
+                    <h3 class="name">
+                        Beldum
+
+                    </h3>
+
+                    <img src="assets/Beldum-Pokedex.png" alt="A picture of Beldum" class="pokemonpicture">
+
+                    <p class="type">
+                        <span class="boldtext">Type:</span> <span class="bluetext">Steel and Psychic</span>
+                    </p>
+
+                    <p class="role">
+                        <span class="boldtext"> Planned role:</span> <span class="bluetext">Wild Encounter</span>
+                    </p>
+
+                    <p class="information">
+                        Its big jaws crunch through boulders. Because its head is so big, it has a hard time getting back upright if it tips over onto its back.
+                    </p>
+            </div>
+        </section>
+    </main>
+    <footer class="pokedexfooter">
+        <p class="footertext">
+            Pokémon Delta Emerald &middot; Browser Based game
+        </p>
+    </footer>
+</body>
+</html>
