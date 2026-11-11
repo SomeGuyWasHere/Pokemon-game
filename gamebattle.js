@@ -83,7 +83,7 @@ export function attack() {
         starterGoesFirst = false;
     } else {
         // When speeds tie, this expression determines who acts first.
-        starterGoesFirst = testMathRoll === 1;
+        starterGoesFirst = testMathRoll() === 1;
     }
 
     // Perform one attack. Choose the attacker and target, play the attack
